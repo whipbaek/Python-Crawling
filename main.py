@@ -15,6 +15,10 @@ print(driver.title)  # 크롤링한 페이지의 title 정보
 print(driver.current_url)  # 현재 크롤링된 페이지의 url
 print("경북대 강의계획서 크롤링")
 print("-" * 100)
+
+f = open('test.txt', 'w')
+
+
 '''
 element = driver.find_element(By.ID,"udcBtns_btnSync1")
 element.click()
@@ -37,20 +41,154 @@ time.sleep(0.5)
 driver.find_element(By.ID, "btnSearch").click()
 time.sleep(0.5)
 
-driver.execute_script("window.scrollTo(0, 1000)")
+driver.execute_script("window.scrollTo(0, 1000)")  # 외부 스크롤
 time.sleep(1)
 
 elem = driver.find_element(By.ID, f"grid01_body_tbody")
+seq=1
 
-for i in range(0, 13):
-    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text, end=', ')
-    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text, end=', ')
-    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text, end=', ')
-    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text, end=', ')
+for i in range(0, 16):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq+=1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
     print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
     print()
-
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
 time.sleep(2)
 
-itemlist = driver.find_element(By.ID,"grid01_scrollY_div")
-driver.execute_script("arguments[0].scrollBy(0, 800)", itemlist)
+itemlist = driver.find_element(By.ID, "grid01_scrollY_div")
+driver.execute_script("arguments[0].scrollBy(0, 320)", itemlist)  # 내부 스크롤, 17부터 다시 크롤링
+
+time.sleep(3)
+
+for i in range(0, 12):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq += 1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    print()
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
+driver.execute_script("arguments[0].scrollBy(0, 240)", itemlist)  # 내부 스크롤, 29부터 다시 크롤링
+for i in range(0, 13):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq += 1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    print()
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
+time.sleep(2)
+
+driver.execute_script("arguments[0].scrollBy(0, 270)", itemlist)  # 내부 스크롤, 42~52
+for i in range(0, 10):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq += 1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    print()
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
+time.sleep(2)
+
+driver.execute_script("arguments[0].scrollBy(0, 40)", itemlist)  # 내부 스크롤, 53~54
+for i in range(8, 11):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq += 1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    print()
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
+time.sleep(2)
+
+driver.execute_script("arguments[0].scrollBy(0, 40)", itemlist)  # 내부 스크롤, 55~ 끝(65)
+for i in range(0, 11):
+    print(seq)
+    f.write(str(seq))
+    f.write("\n")
+    seq += 1
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    print(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    print()
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_7").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_12").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_13").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_14").find_element(By.TAG_NAME, "nobr").text)
+    f.write('\n')
+    f.write(elem.find_element(By.ID, f"grid01_cell_{i}_15").find_element(By.TAG_NAME, "nobr").text)
+    f.write("\n\n")
+
+f.close()
