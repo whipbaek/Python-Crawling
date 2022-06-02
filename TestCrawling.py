@@ -28,6 +28,9 @@ select = Select(driver.find_element(By.ID, "schSbjetCd2"))
 select.select_by_visible_text("IT대학")
 time.sleep(0.5)
 
+
+
+
 # IT 대학들 모두 크롤링
 for i in range(0, 19):
     if i == 3 or (8 <= i <= 15):  # 융복합관 수업이 없는 과들 패스!
