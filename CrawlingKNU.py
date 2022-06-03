@@ -6,8 +6,8 @@ from selenium.common.exceptions import NoSuchElementException
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.common.by import By
 driver = webdriver.Chrome('C:\chromedriver.exe')
-driver.maximize_window()
 driver.get('https://knuin.knu.ac.kr/public/stddm/lectPlnInqr.knu')
+driver.maximize_window()
 
 print("+" * 100)
 print(driver.title)  # 크롤링한 페이지의 title 정보
