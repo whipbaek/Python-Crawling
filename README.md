@@ -32,3 +32,5 @@
 4. finalCrawling.txt 파일이 생성되고 크롤링이 마무리 된다.
 
 ![image](https://user-images.githubusercontent.com/75191916/172538527-edcc639a-87d2-45a5-9209-c0bfac1e1fce.png)
+
+> *주의 : 파일 중간에 여백줄이 여러줄 생길때가 있는데, 구분은 한줄로만 이루어져야하기 때문에 이부분은 수정이 필요하다.
