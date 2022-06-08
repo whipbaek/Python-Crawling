@@ -10,7 +10,7 @@
 - PyCharm
 
 ## 코드 상세설명 
-> 노션링크
+> [노션링크](https://truth-scallop-0eb.notion.site/Python-Selenium-33572309ffad4ea7a23167052c962778)
 
 ## 실행방법, 화면 및 결과
 
