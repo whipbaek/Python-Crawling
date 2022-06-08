@@ -1,6 +1,6 @@
 ## Python Crawling for Project 'Empty lecture rooms KNU'
 
-빈 강의실 조회 서비스를 위해 파이썬으로 데이터를 크롤링 합니다.
+[빈 강의실 조회 서비스](https://github.com/whipbaek/EmptyLecRoom-KNU)를 위해 파이썬으로 데이터를 크롤링 합니다.
 
 ## 개발환경
 
